@@ -4,8 +4,19 @@
              xmlns:local="clr-namespace:B4.PE1.DellobelI"
              x:Class="B4.PE1.DellobelI.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" 
+                    iOS="20, 40, 20, 20" 
+                    Android="20" 
+                    WinPhone="20" />
+    </ContentPage.Padding>
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Label x:Name="lblWelcome" 
+               Text="Welcome to Xamarin Forms!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button x:Name="btnPictureGallery" 
+                Text="Go to Picture gallery" 
+                Clicked="btnPictureGallery_Clicked"></Button>
+    </StackLayout>
 </ContentPage>

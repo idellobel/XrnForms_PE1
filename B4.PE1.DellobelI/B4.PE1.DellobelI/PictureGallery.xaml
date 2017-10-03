@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="B4.PE1.DellobelI.PictureGallery">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" 
+                    iOS="20, 40, 20, 20" 
+                    Android="20, 20, 20, 20" 
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Picture Gallery" 
+                   TextColor="#eeff33" 
+                   BackgroundColor="DarkBlue" 
+                   FontAttributes="Italic" />
+            
+            <Button x:Name="btnGoBack" Text="Go Back to Main screen" Clicked="btnGoBack_Clicked"></Button>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Text="Knop 1" Margin="1" />
+                <Image Text="Knop 2" Grid.Column="1" Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 3" Grid.Row="1" Grid.Column="0" Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 4" Grid.Row="1" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 5" Grid.Row="2" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 6" Grid.Row="2" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 7" Grid.Row="3" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 8" Grid.Row="3" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 9" Grid.Row="4" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Text="Knop 10" Grid.Row="4" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

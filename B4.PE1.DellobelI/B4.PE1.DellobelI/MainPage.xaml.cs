@@ -12,6 +12,15 @@ namespace B4.PE1.DellobelI
         public MainPage()
         {
             InitializeComponent();
+
+            var msgService = DependencyService.Get<IMessageService>();
+            lblWelcome.Text = "Opdracht B4.PE1.DellobelI op " + msgService.GetWelcomeMessage();
+        }
+
+        private async void btnPictureGallery_Clicked(object sender, EventArgs e)
+        {
+            //navigate to Picture gallery
+            await Navigation.PushAsync(new PictureGallery());
         }
     }
 }

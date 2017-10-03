@@ -13,7 +13,7 @@ namespace B4.PE1.DellobelI
         {
             InitializeComponent();
 
-            MainPage = new B4.PE1.DellobelI.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
