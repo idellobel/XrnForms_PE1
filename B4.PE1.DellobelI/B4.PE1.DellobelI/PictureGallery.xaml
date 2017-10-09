@@ -1,46 +1,193 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="B4.PE1.DellobelI.PictureGallery">
-    <ContentPage.Padding>
+             x:Class="B4.PE1.DellobelI.PictureGallery"
+             Title="Picture gallery"
+            Style="{StaticResource ContentPageStyle}">
+    <!--<ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" 
-                    iOS="20, 40, 20, 20" 
-                    Android="20, 20, 20, 20" 
-                    WinPhone="20, 20, 20, 20" />
-    </ContentPage.Padding>
+                    iOS="0, 20,0,0" 
+                    Android="0" 
+                    WinPhone="0" />
+    </ContentPage.Padding>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="gridImage" TargetType="Image">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="Margin" Value="1" />
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="HeightRequest" Value="150" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand">
-            <Label Text="Picture Gallery" 
-                   TextColor="#eeff33" 
-                   BackgroundColor="DarkBlue" 
-                   FontAttributes="Italic" />
-            
-            <Button x:Name="btnGoBack" Text="Go Back to Main screen" Clicked="btnGoBack_Clicked"></Button>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
+        <ScrollView>
+                    
+            <Grid x:Name="gridGallery" ColumnSpacing="2" RowSpacing="0" >
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                
+                <Image Source="amsterdam.jpg" Style="{StaticResource gridImage }">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">amsterdam.jpg</On>
+                            <On Platform="Windows,UWP">images/amsterdam.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                            />
+                    </Image.GestureRecognizers>
+                </Image>
 
-                <Image Text="Knop 1" Margin="1" />
-                <Image Text="Knop 2" Grid.Column="1" Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 3" Grid.Row="1" Grid.Column="0" Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 4" Grid.Row="1" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 5" Grid.Row="2" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 6" Grid.Row="2" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 7" Grid.Row="3" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 8" Grid.Row="3" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 9" Grid.Row="4" Grid.Column="0"  Margin="1" Clicked="Button_Clicked"/>
-                <Image Text="Knop 10" Grid.Row="4" Grid.Column="1"  Margin="1" Clicked="Button_Clicked"/>
+                <Image Source="antwerpen.jpg" Style="{StaticResource gridImage }" Grid.Column="1" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">antwerpen.jpg</On>
+                            <On Platform="Windows,UWP">images/antwerpen.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                              />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="beijing.jpg"  Grid.Row="1" Grid.Column="0" Style="{StaticResource gridImage }"  >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">beijing.jpg</On>
+                            <On Platform="Windows,UWP">images/beijing.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                             />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="bilbao.jpg"  Grid.Row="1" Grid.Column="1" Style="{StaticResource gridImage }" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">bilbao.jpg</On>
+                            <On Platform="Windows,UWP">images/bilbao.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                              />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="china.jpg" Grid.Row="2" Grid.Column="0" Style="{StaticResource gridImage }" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">china.jpg</On>
+                            <On Platform="Windows,UWP">images/china.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                              />
+                    </Image.GestureRecognizers> 
+                </Image>
+                <Image Source="dubai.jpg"  Grid.Row="2" Grid.Column="1" Style="{StaticResource gridImage }" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">dubai.jpg</On>
+                            <On Platform="Windows,UWP">images/dubai.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                              />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="guangzhou.jpg"  Grid.Row="3" Grid.Column="0" Style="{StaticResource gridImage }">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">guangzhou.jpg</On>
+                            <On Platform="Windows,UWP">images/guangzhou.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                             />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="kremlin.jpg"  Grid.Row="3" Grid.Column="1" Style="{StaticResource gridImage }" >
+                        <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">kremlin.jpg</On>
+                            <On Platform="Windows,UWP">images/kremlin.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                             />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="ohio.jpg"  Grid.Row="4" Grid.Column="0" Style="{StaticResource gridImage }" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">ohio.jpg</On>
+                            <On Platform="Windows,UWP">images/ohio.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                              />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image Source="sydney.jpg"  Grid.Row="4" Grid.Column="1" Style="{StaticResource gridImage }" >
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <On Platform="iOS,Android">sydney.jpg</On>
+                            <On Platform="Windows,UWP">images/sydney.jpg</On>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                             Tapped="TapGestureRecognizer_Tapped"
+                             />
+                    </Image.GestureRecognizers>
+                </Image>
+               
+                <Button x:Name="btnGoBack"
+                    Style="{StaticResource CancelButtonStyle}" Text=" &#12298;Go Back to Main screen " Clicked="btnGoBack_Clicked"
+                        Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button.Margin>
+                        <Thickness>
+                            <Thickness.Top>50</Thickness.Top>
+                        </Thickness>
+                    </Button.Margin>
+                </Button>
             </Grid>
-        </StackLayout>
-        
+       
+     </ScrollView>   
     </ContentPage.Content>
 </ContentPage>

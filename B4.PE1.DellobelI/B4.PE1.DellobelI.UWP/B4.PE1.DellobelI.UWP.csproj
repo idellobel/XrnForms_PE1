@@ -109,6 +109,16 @@
     <None Include="B4.PE1.DellobelI.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\amsterdam.jpg" />
+    <Content Include="images\antwerpen.jpg" />
+    <Content Include="images\beijing.jpg" />
+    <Content Include="images\bilbao.jpg" />
+    <Content Include="images\china.jpg" />
+    <Content Include="images\dubai.jpg" />
+    <Content Include="images\guangzhou.jpg" />
+    <Content Include="images\kremlin.jpg" />
+    <Content Include="images\ohio.jpg" />
+    <Content Include="images\sydney.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
