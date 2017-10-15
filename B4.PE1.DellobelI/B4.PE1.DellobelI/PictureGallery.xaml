@@ -4,12 +4,7 @@
              x:Class="B4.PE1.DellobelI.PictureGallery"
              Title="Picture gallery"
             Style="{StaticResource ContentPageStyle}">
-    <!--<ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness" 
-                    iOS="0, 20,0,0" 
-                    Android="0" 
-                    WinPhone="0" />
-    </ContentPage.Padding>-->
+  
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="gridImage" TargetType="Image">

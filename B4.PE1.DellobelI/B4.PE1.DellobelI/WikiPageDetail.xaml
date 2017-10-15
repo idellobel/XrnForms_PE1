@@ -4,8 +4,32 @@
              xmlns:extensions="clr-namespace:B4.PE1.DellobelI.Extensions"
              x:Class="B4.PE1.DellobelI.WikiPageDetail"
              Title="Wikipedia"
-             Style="{StaticResource MasterDetailPageStyle}"
-             >
+             Style="{StaticResource MasterDetailPageStyle}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="WikipageLabelFormattedTekst"  TargetType="Label" BaseResourceKey="WikipageLabel">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+            </Style>
+            
+            <Style x:Key="WikipageLabelGridTitel"  TargetType="Label" BaseResourceKey="WikipageLabelFormattedTekst">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="BackgroundColor" Value="Orange" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="WikipageLabelGridTekst"  TargetType="Label" BaseResourceKey="WikipageLabelGridTitel">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="BackgroundColor" Value="#ccccff" />
+            </Style>
+
+            <Style x:Key="WikipageLabelGridTekstNormaal"  TargetType="Label" BaseResourceKey="WikipageLabelGridTekst">
+                <Setter Property="FontAttributes" Value="None" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
    
     <ScrollView>
         <StackLayout Padding="10"  >
@@ -13,7 +37,7 @@
             <Label Text="Wielersport" Style="{DynamicResource TitleStyle}" TextColor="Black" />
           
             <StackLayout Orientation="Vertical"   >
-                <Label HorizontalOptions="FillAndExpand"  Style="{StaticResource WikipageLabel}" LineBreakMode="WordWrap">
+                <Label  Style="{StaticResource WikipageLabelFormattedTekst}" >
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="De "/>
@@ -61,16 +85,16 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                        <Label Grid.ColumnSpan="2" Margin="3"  HorizontalOptions="FillAndExpand"  
-                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
-                               FontAttributes="Bold"
-                               Text="Wielrennen" >
-
-                        </Label>
+                    
+                    <Label Grid.ColumnSpan="2" 
+                           Margin="3"  
+                           Style="{StaticResource WikipageLabelGridTitel }"
+                           Text="Wielrennen" >
+                    </Label>
 
                     <Image Grid.ColumnSpan="2" Grid.Row="1" Margin="3,0,3,0" 
                                Source="{extensions:ImageResource B4.PE1.DellobelI.images.petacchi.jpg}" 
-                               Aspect="AspectFit"
+                               Aspect="AspectFill"
                                AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" 
                                BackgroundColor="#ccccff"
                                />
@@ -89,23 +113,20 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Grid.ColumnSpan="2" Grid.Row="3" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
-                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
-                               FontAttributes="Bold"
+                    <Label Grid.ColumnSpan="2" Grid.Row="3" Margin="3,0,3,0"  
+                           Style="{StaticResource WikipageLabelGridTitel }"
                                Text="Algemene gegevens" >
 
                         </Label>
-                    
-                    <Label Grid.Column="0" Grid.Row="4" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" TextColor="Black"
-                           FontAttributes="Bold"                
+
+                    <Label Grid.Column="0" Grid.Row="4" Margin="3,0,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"
                            Text="Organisatie" >
 
                     </Label>
-                    
-                    <Label Grid.Column="1" Grid.Row="4" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+
+                    <Label Grid.Column="1" Grid.Row="4" Margin="0,0,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}">
                         <Label.FormattedText>
                                 <FormattedString>
                                 <Span ForegroundColor="Blue" Text="Belgie: KBWB
@@ -117,16 +138,14 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="5" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"     TextColor="Black"           
+                    <Label Grid.Column="0" Grid.Row="5" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"       
                            Text="Start" >
-
                     </Label>
-                    
-                    <Label Grid.Column="1" Grid.Row="5" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+
+                    <Label Grid.Column="1" Grid.Row="5" 
+                           Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Blue" Text="31 mei 1968
@@ -137,17 +156,16 @@
                         </Label.FormattedText>
                     </Label>
 
-                   
-                    <Label Grid.Column="0" Grid.Row="6" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+
+                    <Label Grid.Column="0" Grid.Row="6" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"       
                            Text="Type" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="6" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="6" 
+                           Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Black" Text="Zowel "  />
@@ -158,16 +176,15 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="7" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="7" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"   
                            Text="Categorie" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="7" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="7" 
+                           Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Blue" Text="Duursport "/>
@@ -175,16 +192,14 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="8" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="8" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"       
                            Text="Locatie" >
-
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="8" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="8" 
+                           Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Blue" Text="Piste "  />
@@ -196,16 +211,15 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="9" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="9" Margin="3,3,0,0" 
+                           Style="{StaticResource WikipageLabelGridTekst}"     
                            Text="Olympische sport" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="9" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="9" 
+                           Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Black" Text="sinds "  />
@@ -213,16 +227,14 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="10" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="10" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"             
                            Text="Paralympische sport" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="10" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="10" Margin="0,3,3,0"  
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Black" Text="sinds "  />
@@ -231,23 +243,21 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.ColumnSpan="2" Grid.Row="11" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
-                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
-                               FontAttributes="Bold"
-                               Text="Competities / Kampioenschappen" >
-
+                    <Label Grid.ColumnSpan="2" Grid.Row="11" 
+                           Margin="3,0,3,0"  
+                           Style="{StaticResource WikipageLabelGridTitel }"
+                           Text="Competities / Kampioenschappen" >
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="12" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="12" Margin="3,0,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"      
                            Text="Kampioenschappen" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="12" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="12" 
+                           Margin="0,0,3,0"   
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Black" FontAttributes="Bold" Text="Belgie: 
@@ -294,22 +304,21 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.ColumnSpan="2" Grid.Row="13" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
-                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
-                               FontAttributes="Bold"
-                               Text="Verwante sporten" >
+                    <Label Grid.ColumnSpan="2" Grid.Row="13" 
+                           Margin="3,0,3,0"  
+                           Style="{StaticResource WikipageLabelGridTitel }"
+                           Text="Verwante sporten" >
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="14" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="14" 
+                           Margin="3,0,0,0" 
+                           Style="{StaticResource WikipageLabelGridTekst}"         
                            Text="Disciplines" >
-
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="14" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="14" 
+                           Margin="0,0,3,0"   
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" > 
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Blue"  Text="Baanwielrennen 
@@ -330,16 +339,15 @@
                         </Label.FormattedText>
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="15" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           FontAttributes="Bold"  TextColor="Black"              
+                    <Label Grid.Column="0" Grid.Row="15" Margin="3,3,0,0"  
+                           Style="{StaticResource WikipageLabelGridTekst}"        
                            Text="Verwante sporten" >
 
                     </Label>
 
-                    <Label Grid.Column="1" Grid.Row="15" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
-                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
-                           LineBreakMode="WordWrap" >
+                    <Label Grid.Column="1" Grid.Row="15" 
+                           Margin="0,3,3,0"   
+                           Style="{StaticResource WikipageLabelGridTekstNormaal}" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span ForegroundColor="Blue"  Text="Cyclobal 
@@ -349,10 +357,11 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
+                    
                     <StackLayout Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="16" Margin="3,0,3,3"   Orientation="Horizontal"
                                  BackgroundColor="Orange" HorizontalOptions="FillAndExpand">
                         <Label 
-                            HorizontalOptions="End"
+                           HorizontalOptions="End"
                            HorizontalTextAlignment="End"  
                            FontAttributes="Bold"
                            WidthRequest="200">
@@ -382,25 +391,23 @@
                         
                     </StackLayout>
                 </Grid>
-                        
-                     
-                
+                 
                 <BoxView  Color="Black" WidthRequest ="100" HeightRequest="1"/>
                 
-                <Label HorizontalOptions="FillAndExpand" Style="{DynamicResource TitleStyle}" TextColor="Black"
-                        
-                        Text="Geschiedenis" >
-
+                <Label HorizontalOptions="FillAndExpand" 
+                       Style="{DynamicResource TitleStyle}" 
+                       TextColor="Black"
+                       Text="Geschiedenis" >
                 </Label>
-                <Label HorizontalOptions="FillAndExpand"   Style="{StaticResource WikipageLabel}" >
+                
+                <Label Style="{StaticResource WikipageLabelFormattedTekst}" >
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="De fiets werd uitgevonden in de "/>
                             <Span Text="19de eeuw " ForegroundColor="Blue" />
                             <Span Text="en in 2009 zijn er wereldwijd meer dan een miljard."/>
                             <Span Text="[&#185;] " ForegroundColor="Blue"  />
-                            <Span Text="In veel regio's is de fiets nog steeds het belangrijkste vervoer.
-                                                                                                          De eerste wielerwedstrijd vond plaats op "/>
+                            <Span Text="In veel regio's is de fiets nog steeds het belangrijkste vervoer.&#x0a;De eerste wielerwedstrijd vond plaats op "/>
                             <Span Text="31 mei 1968 " ForegroundColor="Blue"/>
                             <Span Text=" in het " />
                             <Span Text="Park van Saint-Cloud" ForegroundColor="Red"/>
@@ -409,8 +416,8 @@
                             <Span Text=". De afstand bedroeg 1200 meter, en de wedstrijd werd gewonnen door de Brit "/>
                             <Span Text="James Moore" ForegroundColor="Red"/>
                             <Span Text=". Hij reed de wedstrijd op een fiets met rubberen banden."/>
-                            <Span ForegroundColor="Blue" Text="[&#178;]
-                                  "/>
+                            <!--Zonder &#x0a; werd geen nieuwe lijn gestart.-->
+                            <Span ForegroundColor="Blue" Text="[&#178;]&#x0a;"/>
                             <Span Text="De eerste wedstrijd die een afstand tussen twee steden overbrugde, was "/>
                             <Span Text="Parijs-Rouen" ForegroundColor="Blue"/>
                             <Span Text=". Ook deze wedstrijd werd door Moore gewonnen, die 123 kilometer tussen beide steden aflegde in een tijd van 10 uur en 40 minuten." />
@@ -422,12 +429,13 @@
 
                 <BoxView  Color="Black" WidthRequest ="100" HeightRequest="1"/>
                 
-                <Label HorizontalOptions="FillAndExpand"   Style="{DynamicResource TitleStyle}" TextColor="Black"
-                        
-                        Text="Uitrusting" >
-
+                <Label HorizontalOptions="FillAndExpand"   
+                       Style="{DynamicResource TitleStyle}" 
+                       TextColor="Black"
+                       Text="Uitrusting" >
                 </Label>
-                <Label HorizontalOptions="FillAndExpand"   Style="{StaticResource WikipageLabel}">
+                
+                <Label Style="{StaticResource WikipageLabelFormattedTekst}">
                     <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Voor iedere discipline wordt gebruikgemaakt van een ander soort fiets. De "/>
