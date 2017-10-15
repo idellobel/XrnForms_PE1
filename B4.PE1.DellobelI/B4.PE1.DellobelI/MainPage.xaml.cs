@@ -24,9 +24,9 @@ namespace B4.PE1.DellobelI
            
         }
 
-        private void btnWiki_Clicked(object sender, EventArgs e)
+        private async void btnWiki_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushModalAsync(new NavigationPage(new WikiPage()));
+            await Navigation.PushModalAsync(new WikiPage());
         }
     }
 }

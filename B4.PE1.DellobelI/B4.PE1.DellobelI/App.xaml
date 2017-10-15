@@ -12,8 +12,8 @@
             </OnPlatform>
 
             <!-- Common Colors -->
-            <Color x:Key="PageBackgroundColor">#473e36</Color>
-            <Color x:Key="TitleTextColor">#fef3cd</Color>
+            <Color x:Key="PageBackgroundColor">#993300</Color>
+            <Color x:Key="TitleTextColor">#ffffb3</Color>
             <Color x:Key="NormalTextColor">#f3f0eb</Color>
 
             <!-- Implicit Page Styles (for ALL pages, no x:Key present!) -->
@@ -21,8 +21,9 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
             </Style>
             <Style x:Key="ContentPageStyle" TargetType="ContentPage" BasedOn="{StaticResource BasePageStyle}" />
-            <Style x:Key="TabbedPageStyle" TargetType="TabbedPage" BasedOn="{StaticResource BasePageStyle}" />
-            <Style x:Key="MasterDetailPageStyle" TargetType="MasterDetailPage" BasedOn="{StaticResource BasePageStyle}" />
+            <Style x:Key="MasterDetailPageStyle" TargetType="MasterDetailPage" BasedOn="{StaticResource BasePageStyle}" >
+                <Setter Property="BackgroundColor" Value="#ffffcc"></Setter>
+            </Style>
 
             <!-- ContentPage Style -->
             <Style x:Key="PlatformPaddedContentPageStyle" TargetType="ContentPage">
@@ -41,6 +42,9 @@
             <!-- Implicit style (applies to ALL Labels) for Body (inherits from built-in BodyStyle) -->
             <Style TargetType="Label" BaseResourceKey="BodyStyle">
                 <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+            </Style>
+            <Style x:Key="WikipageLabel"  TargetType="Label" BaseResourceKey="BodyStyle">
+                <Setter Property="TextColor" Value="#000000" />
             </Style>
 
             <!-- Default Buttons -->
@@ -64,7 +68,7 @@
 
             <!-- Master page Views -->
             <Color x:Key="MasterPageTextColor">#473e36</Color>
-            <Color x:Key="MasterPageBackgroundColor">#fef3cd</Color>
+            <Color x:Key="MasterPageBackgroundColor">#ecffb3</Color>
             <Style x:Key="MasterPageListView" TargetType="ListView">
                 <Setter Property="BackgroundColor" Value="{StaticResource MasterPageBackgroundColor}" />
             </Style>

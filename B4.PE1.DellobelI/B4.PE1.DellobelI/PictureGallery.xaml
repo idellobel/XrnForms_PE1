@@ -16,7 +16,7 @@
                 <Setter Property="BackgroundColor" Value="Black"/>
                 <Setter Property="Margin" Value="1" />
                 <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="Aspect" Value="AspectFill" />
                 <Setter Property="HeightRequest" Value="150" />
             </Style>
         </ResourceDictionary>

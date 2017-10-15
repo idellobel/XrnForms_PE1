@@ -62,13 +62,11 @@ namespace B4.PE1.DellobelI
 
                 Content = new StackLayout()
                 {
-
-                   
+  
                     Children = {
                                 Large,
                                 btnBackGallery
                                 },
-
                 }
 
             };

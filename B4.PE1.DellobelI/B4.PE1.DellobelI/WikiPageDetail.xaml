@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:B4.PE1.DellobelI.Extensions"
+             x:Class="B4.PE1.DellobelI.WikiPageDetail"
+             Title="Wikipedia"
+             Style="{StaticResource MasterDetailPageStyle}"
+             >
+   
+    <ScrollView>
+        <StackLayout Padding="10"  >
+
+            <Label Text="Wielersport" Style="{DynamicResource TitleStyle}" TextColor="Black" />
+          
+            <StackLayout Orientation="Vertical"   >
+                <Label HorizontalOptions="FillAndExpand"  Style="{StaticResource WikipageLabel}" LineBreakMode="WordWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="De "/>
+                            <Span Text="wielersport " FontAttributes="Bold" />
+                            <Span Text="is een verzamelnaam voor alle "/>
+                                <Span Text="sporten " ForegroundColor="Blue"/>
+                                <Span Text="waarbij gebruik wordt gemaakt van een "/>
+                                <Span Text="fiets" ForegroundColor="Blue"/>
+                                <Span Text=".Voor de fietssporten waarbij het op snelheid aankomt – en dat zijn de meeste – wordt ook de term " />
+                                <Span Text="wielrennen " FontAttributes="Bold"/>
+                            <Span Text="gebruikt. Er zijn verschillende takken binnen de wielersport. Binnen elke tak draagt de wereldkampioen op een bepaald onderdeel altijd de "/>
+
+                            <Span Text="regenboogtrui" ForegroundColor="Blue"/>
+                                <Span Text=" . De"/>
+                                <Span Text="  UCI" ForegroundColor="Blue"/>
+                            <Span Text=" (Internationale Wielerunie) is de wereldwijde overkoepelende organisatie  binnen de wielersport." />
+
+                        </FormattedString>
+                     </Label.FormattedText>   
+                </Label>
+
+                <BoxView  Color="Black" WidthRequest ="100" HeightRequest="1"/>
+
+                <Grid WidthRequest="350" HorizontalOptions="End" ColumnSpacing="0" RowSpacing="0" BackgroundColor="DarkGray"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="175"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="175"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                        <Label Grid.ColumnSpan="2" Margin="3"  HorizontalOptions="FillAndExpand"  
+                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
+                               FontAttributes="Bold"
+                               Text="Wielrennen" >
+
+                        </Label>
+
+                    <Image Grid.ColumnSpan="2" Grid.Row="1" Margin="3,0,3,0" 
+                               Source="{extensions:ImageResource B4.PE1.DellobelI.images.petacchi.jpg}" 
+                               Aspect="AspectFit"
+                               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" 
+                               BackgroundColor="#ccccff"
+                               />
+                    
+                    <Label Grid.ColumnSpan="2" Grid.Row="2" Margin="3,0,3,0" HorizontalOptions="FillAndExpand" 
+                               HorizontalTextAlignment="Center"  Style="{StaticResource WikipageLabel}"
+                                    FontSize="10"
+                                    BackgroundColor="#ccccff">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Alessandro Petacchi " ForegroundColor="Blue"/>
+                                    <Span Text="won " />
+                                    <Span Text="Milaan-San Remo " ForegroundColor="Blue"/>
+                                    <Span Text="in " />
+                                    <Span Text="2005" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.ColumnSpan="2" Grid.Row="3" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
+                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
+                               FontAttributes="Bold"
+                               Text="Algemene gegevens" >
+
+                        </Label>
+                    
+                    <Label Grid.Column="0" Grid.Row="4" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" TextColor="Black"
+                           FontAttributes="Bold"                
+                           Text="Organisatie" >
+
+                    </Label>
+                    
+                    <Label Grid.Column="1" Grid.Row="4" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                                <FormattedString>
+                                <Span ForegroundColor="Blue" Text="Belgie: KBWB
+                                      Nederland: KNWU
+                                      "  />
+                                <Span ForegroundColor="Black"  Text="Mondiaal:" />
+                                <Span ForegroundColor="Blue" Text="UCI"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="5" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"     TextColor="Black"           
+                           Text="Start" >
+
+                    </Label>
+                    
+                    <Label Grid.Column="1" Grid.Row="5" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Blue" Text="31 mei 1968
+                                       "  />
+                                <Span ForegroundColor="Black"  Text="(1e wielerwedstrijd; " />
+                                <Span ForegroundColor="Blue" Text="Parijs"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                   
+                    <Label Grid.Column="0" Grid.Row="6" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Type" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="6" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Black" Text="Zowel "  />
+                                <Span ForegroundColor="Red"  Text="individueel " />
+                                <Span ForegroundColor="Black" Text="als in "/>
+                                <Span ForegroundColor="Blue" Text="teamverband "/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="7" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Categorie" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="7" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Blue" Text="Duursport "/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="8" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Locatie" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="8" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Blue" Text="Piste "  />
+                                <Span ForegroundColor="Black"  Text="/ " />
+                                <Span ForegroundColor="Red" Text="Weg "/>
+                                <Span ForegroundColor="Black" Text="/ "/>
+                                <Span ForegroundColor="Red" Text="Veld "/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="9" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Olympische sport" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="9" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Black" Text="sinds "  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="10" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Paralympische sport" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="10" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Black" Text="sinds "  />
+                                <Span ForegroundColor="Blue"  Text="1984 " />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.ColumnSpan="2" Grid.Row="11" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
+                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
+                               FontAttributes="Bold"
+                               Text="Competities / Kampioenschappen" >
+
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="12" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Kampioenschappen" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="12" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Black" FontAttributes="Bold" Text="Belgie: 
+                                      "  />
+                                <Span ForegroundColor="Blue"  Text="BK" />
+                                <Span ForegroundColor="Black" Text="(weg)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="BK" />
+                                <Span ForegroundColor="Black" Text="(veld)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="BK" />
+                                <Span ForegroundColor="Black" Text="(MBK)
+                                      "/>
+                                <Span ForegroundColor="Black" FontAttributes="Bold" Text="Nederland: 
+                                      "  />
+                                <Span ForegroundColor="Blue"  Text="NK" />
+                                <Span ForegroundColor="Black" Text="(weg)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="NK" />
+                                <Span ForegroundColor="Black" Text="(veld)
+                                      "/>
+                                <Span ForegroundColor="Black" FontAttributes="Bold" Text="Mondiaal: 
+                                      "  />
+                                <Span ForegroundColor="BlueViolet"  Text="UCI World Tour
+                                      " />
+                                <Span ForegroundColor="Blue"  Text="WK" />
+                                <Span ForegroundColor="Black" Text="(weg)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="WK" />
+                                <Span ForegroundColor="Black" Text="(piste)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="WK" />
+                                <Span ForegroundColor="Black" Text="(veld)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="WK" />
+                                <Span ForegroundColor="Black" Text="(MBK)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="WK" />
+                                <Span ForegroundColor="Black" Text="(BMX)
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="Olympische spelen" />
+                                
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.ColumnSpan="2" Grid.Row="13" Margin="3,0,3,0"  HorizontalOptions="FillAndExpand" 
+                               HorizontalTextAlignment="Center" BackgroundColor="Orange" TextColor="Black"
+                               FontAttributes="Bold"
+                               Text="Verwante sporten" >
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="14" Margin="3,0,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Disciplines" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="14" Margin="0,0,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Blue"  Text="Baanwielrennen 
+                                      " />
+                                
+                                <Span ForegroundColor="Blue" Text="BMX
+                                      " />
+                                <Span ForegroundColor="Blue" Text="Mountainbiken
+                                      " />
+                                <Span ForegroundColor="Blue" Text="Trial
+                                      "/>
+                                <Span ForegroundColor="Blue" Text="Veldrijden
+                                      "  />
+                                <Span ForegroundColor="Blue"  Text="Wegwielrennen
+                                      " />
+                                
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Column="0" Grid.Row="15" Margin="3,3,0,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           FontAttributes="Bold"  TextColor="Black"              
+                           Text="Verwante sporten" >
+
+                    </Label>
+
+                    <Label Grid.Column="1" Grid.Row="15" Margin="0,3,3,0"  HorizontalOptions="FillAndExpand" 
+                           HorizontalTextAlignment="Start" BackgroundColor="#ccccff" 
+                           LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span ForegroundColor="Blue"  Text="Cyclobal 
+                                      " />
+                                <Span ForegroundColor="Blue" Text="Kunstfietsen
+                                      " />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <StackLayout Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="16" Margin="3,0,3,3"   Orientation="Horizontal"
+                                 BackgroundColor="Orange" HorizontalOptions="FillAndExpand">
+                        <Label 
+                            HorizontalOptions="End"
+                           HorizontalTextAlignment="End"  
+                           FontAttributes="Bold"
+                           WidthRequest="200">
+                            <Label.FormattedText>
+                            <FormattedString>
+                               <Span ForegroundColor="Black"  Text="Portaal " />
+                            </FormattedString>
+                            </Label.FormattedText>
+
+                        </Label>
+
+                        <Image   HorizontalOptions="Center" 
+                               Source="{extensions:ImageResource B4.PE1.DellobelI.images.portalicon.png}" 
+                               Aspect="AspectFit"/>
+                           
+                        <Label 
+                           HorizontalOptions="Center" 
+                            HorizontalTextAlignment="Start"
+                           FontAttributes="Bold" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span ForegroundColor="Blue"  Text="Sport 
+                                           Wielrennen" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        
+                    </StackLayout>
+                </Grid>
+                        
+                     
+                
+                <BoxView  Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                
+                <Label HorizontalOptions="FillAndExpand" Style="{DynamicResource TitleStyle}" TextColor="Black"
+                        
+                        Text="Geschiedenis" >
+
+                </Label>
+                <Label HorizontalOptions="FillAndExpand"   Style="{StaticResource WikipageLabel}" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="De fiets werd uitgevonden in de "/>
+                            <Span Text="19de eeuw " ForegroundColor="Blue" />
+                            <Span Text="en in 2009 zijn er wereldwijd meer dan een miljard."/>
+                            <Span Text="[&#185;] " ForegroundColor="Blue"  />
+                            <Span Text="In veel regio's is de fiets nog steeds het belangrijkste vervoer.
+                                                                                                          De eerste wielerwedstrijd vond plaats op "/>
+                            <Span Text="31 mei 1968 " ForegroundColor="Blue"/>
+                            <Span Text=" in het " />
+                            <Span Text="Park van Saint-Cloud" ForegroundColor="Red"/>
+                            <Span Text=", in " />
+                            <Span Text="Parijs" ForegroundColor="Blue"/>
+                            <Span Text=". De afstand bedroeg 1200 meter, en de wedstrijd werd gewonnen door de Brit "/>
+                            <Span Text="James Moore" ForegroundColor="Red"/>
+                            <Span Text=". Hij reed de wedstrijd op een fiets met rubberen banden."/>
+                            <Span ForegroundColor="Blue" Text="[&#178;]
+                                  "/>
+                            <Span Text="De eerste wedstrijd die een afstand tussen twee steden overbrugde, was "/>
+                            <Span Text="Parijs-Rouen" ForegroundColor="Blue"/>
+                            <Span Text=". Ook deze wedstrijd werd door Moore gewonnen, die 123 kilometer tussen beide steden aflegde in een tijd van 10 uur en 40 minuten." />
+                            <Span Text="[&#179;]" ForegroundColor="Blue"/> 
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+                <BoxView  Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                
+                <Label HorizontalOptions="FillAndExpand"   Style="{DynamicResource TitleStyle}" TextColor="Black"
+                        
+                        Text="Uitrusting" >
+
+                </Label>
+                <Label HorizontalOptions="FillAndExpand"   Style="{StaticResource WikipageLabel}">
+                    <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Voor iedere discipline wordt gebruikgemaakt van een ander soort fiets. De "/>
+                        <Span Text="geometrie " ForegroundColor="Red" />
+                        <Span Text="(fietsjargon voor de verhouding tussen de maten van de verschillende onderdelen), soort "/>
+                        <Span Text="remmen " ForegroundColor="Blue"  />
+                        <Span Text="en "/>
+                        <Span Text="banden " ForegroundColor="Blue"/>
+                        <Span Text=", wielmaat en andere extra's maken hierbij het verschil. Bij het tijdrijden is het bijvoorbeeld belangrijk om een gestroomlijnde fiets te hebben.
+                                                            De kleding bestaat onder andere uit een speciaal " />
+                        <Span Text="wielrennersshirt " ForegroundColor="Blue"/>
+                        <Span Text=" , " />
+                        <Span Text="wielrennersbroek " ForegroundColor="Red"/>
+                        <Span Text="en "/>
+                        <Span Text="wielrennersschoenen" ForegroundColor="Red"/>
+                        <Span Text=". Ook dragen de renners tegenwoordig in vrijwel alle disciplines een "/>
+                        <Span Text="helm" ForegroundColor="Blue" />
+                        <Span Text=". Meestal dragen ze ook handschoenen die tot de helft van de vingerkootjes reiken."/>
+                    </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        
+  </StackLayout>
+    </ScrollView>
+</ContentPage>
